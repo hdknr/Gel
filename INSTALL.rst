@@ -41,7 +41,7 @@ To install **Gel** from soruce code, use the provided installation script::
 Or it is also possible to install this application directly from
 the `source code repository`_ using ``pip``::
 
-    pip install -e hg+https://github.com/hdknr/Gel
+    pip install -e hg+https://github.com/hdknr/Gel#egg=Gel
 
 The above command will install the latest development release of **Gel**.
 

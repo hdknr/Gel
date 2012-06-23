@@ -48,11 +48,11 @@ from setuptools import setup
 
 # - Meta Info
 
-from Gel import get_version
+from gel import get_version
 
-NAME='Gel'
+NAME='gel'
 DESCRIPTION=''
-PACKAGES=['Gel',]
+PACKAGES=['gel',]
 SCRIPTS= glob.glob('src/scripts/*.py')
 try:
     INSTALL_REQUIRES=[ r for r in open('requirements.txt').read().split('\n') if len(r)>0]
