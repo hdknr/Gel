@@ -1,0 +1,11 @@
+include AUTHORS.rst
+include INSTALL.rst
+include LICENSE.rst
+include NOTICE.rst
+include README.rst
+include MANIFEST.in
+include requirements.txt
+include setup.cfg
+include setup.py
+recursive-include src/Gel *.py *.json *.mo *.po *.html
+graft docs
