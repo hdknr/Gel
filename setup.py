@@ -76,7 +76,7 @@ if __name__=='__main__':
         maintainer_email = 'gmail [at] hdknr.com',
         url = 'https://github.com/hdknr/Gel',
         description = 'Gel is a _______________________.',
-        long_description = read('README'),
+        long_description = read('README.rst'),
         download_url = 'https://github.com/hdknr/Gel',
         platforms=['any'],
         classifiers = [
