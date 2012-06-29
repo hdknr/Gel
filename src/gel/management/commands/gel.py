@@ -39,9 +39,10 @@ class Command(BaseCommand):
         #: URLS
         from django.test import client
         _c = client.Client()
-        r = _c.get('/') 
-        print r.content
-        print dir(r)
+        r = _c.get('/index.html') 
+        open(DEFAULT_DIR + '/index.html', 'w').write(r.content)
+#        print r.content
+#        print dir(r)
 
     def handle(self, *args, **options):
         command = args[0] if len(args) >0 else 'default'
