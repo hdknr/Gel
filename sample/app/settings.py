@@ -160,14 +160,13 @@ LOGGING = {
 }
 # --- Gel ---
 INSTALLED_APPS += ('gel',)
+from django.conf import global_settings
+TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
+    'gel.context.params', # 
+)
+STATIC_RELATIVE=True
 
 # --- mandb ---
 #INSTALLED_APPS += ('mandb',)
 
-# --- Context ---
-from django.conf import global_settings
-TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
-    'app.context.params', # application custom
-)
-STATIC_RELATIVE=True
 

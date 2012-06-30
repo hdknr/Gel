@@ -25,22 +25,31 @@ class Command(BaseCommand):
 
     )
 
+    def save_content(self,urlpath ):
+        from django.test import client
+        _c = client.Client()
+        r = _c.get(urlpath)
+
+        save_dir = DEFAULT_DIR + os.path.dirname(urlpath) 
+        if not os.path.isdir(save_dir):
+            os.makedirs(save_dir)
+
+        open(DEFAULT_DIR + urlpath, 'w').write(r.content)
+
     def handle_default(self, *args, **options):
         #: ROOT
         if not os.path.isdir(options['dir']):
             os.makedirs(options['dir'] ) 
 
         #: STATIC
-        STATIC = options['dir'] +"/static" 
-        if os.path.isdir(STATIC):
-            shutil.rmtree(STATIC) 
-        shutil.copytree('static',STATIC )       #: TODO "static" should be given as option
+        self.STATIC = options['dir'] +"/static" 
+        if os.path.isdir(self.STATIC):
+            shutil.rmtree(self.STATIC) 
+        shutil.copytree('static',self.STATIC )       #: TODO "static" should be given as option
 
         #: URLS
-        from django.test import client
-        _c = client.Client()
-        r = _c.get('/index.html') 
-        open(DEFAULT_DIR + '/index.html', 'w').write(r.content)
+        self.save_content('/a/a/a/index.html')
+
 #        print r.content
 #        print dir(r)
 
