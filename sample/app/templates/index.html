@@ -1,32 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+{% extends "base.html" %}
 
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<meta name="Robots" content="index,follow" />
-	<meta name="author" content="Luka Cvrk (www.solucija.com)" />
-	<meta name="description" content="Description" />
-	<meta name="keywords" content="key, words" />
-	<link rel="stylesheet" type="text/css" href="static/css/screen.css" media="screen" />
-	<title>Distinctive - web development company</title>
-</head>
-
-<body>
-	<div id="content">
-		<p id="top">Duis rutrum dapibus diam. Sed turpis sem, suscipit et, ullamcorper vel, aliquam in, tellus.</p>
-		<div id="logo">
-			<h1><a href="index.html">distinctive</a></h1>
-		</div>
-
-		<ul id="menu">
-			<li class="current"><a href="#">Home</a></li>
-			<li><a href="#">News</a></li>
-			<li><a href="#">Work</a></li>
-			<li><a href="#">Services</a></li>
-			<li><a href="#">About</a></li>
-			<li><a href="#">Contact</a></li>
-		</ul>
-
+{% block page %}
 		<div class="line"></div>
 		<div id="pitch">
 			<h1>We provide turnkey, high-quality<br />solutions regardless of the project size.</h1>
@@ -49,6 +23,7 @@
 			<h4>Join the Movement</h4>
 			<p><em>Laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</em></p>
 		</div>
+
 		<div class="right">
 			<h3>12 / 2009</h3>
 			<p>Duis rutrum dapibus diam. Sed turpis sem, suscipit et, ullamcorper vel, aliquam in, tellus. Phasellus interdum. Sed pede. Fusce semper tellus quis sapien.</p>
@@ -56,9 +31,5 @@
 			<h3>12 / 2009</h3>
 			<p>Duis rutrum dapibus diam. Sed turpis sem, suscipit et, ullamcorper vel, aliquam in, tellus. Phasellus interdum. Sed pede. Fusce semper tellus quis sapien.</p>
 		</div>
-		<div id="footer">
-			<p>&copy; Copyright 2009 Distinctive &minus; Design: Luka Cvrk, <a href="http://www.solucija.com" title="Free CSS Templates">Solucija</a></p>
-		</div>	
-	</div>
-</body>
-</html>
+
+{% endblock %}
