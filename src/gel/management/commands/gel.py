@@ -48,7 +48,11 @@ class Command(BaseCommand):
         shutil.copytree('static',self.STATIC )       #: TODO "static" should be given as option
 
         #: URLS
-        self.save_content('/a/a/a/index.html')
+        urls = ['/index.html','/contact.html' ,
+                '/a/a/a/a/index.html'
+                ]
+        for u in urls:
+            self.save_content( u )
 
 #        print r.content
 #        print dir(r)

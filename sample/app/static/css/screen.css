@@ -18,6 +18,7 @@ h4 { margin: 0 0 15px; color: #555; font-weight: normal; font-size: 1.6em; font-
 p { clear: both; line-height: 1.64em; margin: 0 0 15px; }
 .line { clear: both; border-bottom: 1px solid #ddd; margin: 0 0 45px; }
 .clear { clear: both; }
+
 #content { width: 970px; margin: 0 auto; }
 	#top { color: #ccc; padding: 6px 20px 0; font-size: .84em; text-align: right; }
 	#logo { float: left; background: url(../images/redbg.gif) repeat-x; padding: 100px 25px 15px; margin: -46px 0 20px; }
@@ -26,7 +27,8 @@ p { clear: both; line-height: 1.64em; margin: 0 0 15px; }
 		#menu li { display: inline; font-size: 1.3em; }
 			#menu li a { float: left; color: #808080; padding: 0 0 5px; margin: 0 0 0 55px; }
 			#menu li a:hover, #menu li.current a, #menu li a:focus { color: #000; border-bottom: 1px solid #ddd; }
-	#pitch { background: url(../images/monitor.gif) no-repeat right top; padding: 30px 350px 0 0; border-bottom: 1px solid #ddd; height: 210px; margin: 0 0 35px; }
+	#pitch { background: url(../images/vegetables.jpg) no-repeat right -40px; 
+            padding: 20px 390px 0 0; border-bottom: 1px solid #ddd; height: 210px; margin: 0 0 35px; }
 		#pitch h1 { font-size: 2.6em; color: #000; margin: 0 0 20px; }
 		#pitch h2 { line-height: 1.5em; }
 	.left { float: left; width: 250px; }	
@@ -35,3 +37,6 @@ p { clear: both; line-height: 1.64em; margin: 0 0 15px; }
 	.third { float: left; width: 296px; margin: 0 40px 20px 0; }
 		.last { margin-right: 0; }
 	#footer { clear: both; font-size: .84em; border-top: 1px solid #ddd; padding: 20px 0 0; }
+
+#pitch-contact  { background: url(../images/sendagaya_sky.jpg ) no-repeat right -40px; 
+            padding: 20px 390px 0 0; border-bottom: 1px solid #ddd; height: 210px; margin: 0 0 35px; }

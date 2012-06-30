@@ -7,19 +7,18 @@
 <body>
     <div id="content">
 
-        <p id="top">Duis rutrum dapibus diam. Sed turpis sem, suscipit et, ullamcorper vel, aliquam in, tellus.</p>
+        <p id="top"> Fresh Vegetables for You.</p>
 
         <div id="logo">
-            <h1><a href="index.html">distinctive</a></h1>
+            <h1><a href="{{RELATVIE_ROOT}}/index.html">{{ META.SITE_NAME }}</a></h1>
         </div>        
 
         <ul id="menu">
-            <li class="current"><a href="#">Home</a></li>
+            <li class="current"><a href="{{RELATIVE_ROOT}}/index.html">Home</a></li>
             <li><a href="#">News</a></li>
-            <li><a href="#">Work</a></li>
-            <li><a href="#">Services</a></li>
+            <li><a href="#">Products</a></li>
             <li><a href="#">About</a></li>            
-            <li><a href="#">Contact</a></li>
+            <li><a href="{{RELATIVE_ROOT}}/contact.html">Contact</a></li>
         </ul>
 
 {% block page %}

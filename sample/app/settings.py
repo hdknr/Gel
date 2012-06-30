@@ -163,6 +163,7 @@ INSTALLED_APPS += ('gel',)
 from django.conf import global_settings
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
     'gel.context.params', # 
+    'app.context.site',   # - this sample application
 )
 STATIC_RELATIVE=True
 
