@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.db import models
+from datetime import datetime
 
 
 class Content(models.Model):
@@ -7,8 +8,16 @@ class Content(models.Model):
     title = models.CharField(u'Content Title',max_length=200,db_index=True,blank=True,null=True)
     text  = models.TextField(u'Content Text',)
     media = models.TextField(u'Content Media',default=None,null=True,blank=True)
+    dt_publish = models.DateTimeField(u'Content Publish Date Time',default=datetime.now )
 
-class Page(models.Model):
-    contents = models.ManyToManyField(Content,default=None,null=True,blank=True )
-    title = models.CharField(u'Page Title',max_length=200,db_index=True,blank=True,null=True)
-    
+    class Meta:
+        abstract=True
+
+class News(Content):
+    pass
+
+def context(request):
+    return {
+                "LATEST_NEWS" : News.objects.all()[:5],   
+           } 
+
