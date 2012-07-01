@@ -50,7 +50,9 @@
 
   {% for instance in page.object_list  %}  
       <h3 style="width:50%">{{instance.dt_publish|date:"Y/m/d"}} {{instance.title}} </h3>
-        <p>{{ instance.text  }} </p>
+        <p>{{ instance.text|truncatewords:1  }}  (<a href="{% url contents_news_item id=instance.id %}">全文</a> )
+        </p>
+        
   {% endfor %}  
 
 {% endblock %}
