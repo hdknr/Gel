@@ -2,6 +2,7 @@
 from django.db import models
 from datetime import datetime
 
+from  django.core.urlresolvers import reverse
 
 class Content(models.Model):
     slug  = models.CharField(u'Content Slug',max_length=200,db_index=True,unique=True) 
@@ -14,7 +15,8 @@ class Content(models.Model):
         abstract=True
 
 class News(Content):
-    pass
+    def get_absolute_url(self):
+        return reverse("contents_news_item",kwargs={'id':self.id} )
 
 def context(request):
     return {
