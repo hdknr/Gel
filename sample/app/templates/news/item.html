@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block page %}
+		<div class="line"></div>
+        <div>
+          <h1>{{ news.title }}</h1>
+        </div>
+		<div class="line"></div>
+         <h3>{{ news.dt_publish }}</h3>
+         <p>{{ news.text }}
+         </p>
+
+		</div>
+
+{% endblock %}

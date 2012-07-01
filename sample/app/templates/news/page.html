@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block page %}
+		<div class="line"></div>
+        <div>
+          <h1>最新ニュース</h1>
+        </div>
+		<div class="line"></div>
+
+    <!--
+     {{ page.previous_page_number }} 
+     {{ page.next_page_number }}
+    -->
+    {# Pager #}
+    <div class="core-pager"
+
+      {% if page.has_previous %}
+          <a name="page_prev" />
+          <span class="page">
+            <a href="{% url contents_news_page page=page.previous_page_number %}" >&lt;&lt;</a>
+          </span>
+      {% endif %}
+
+      {% if page.paginator.page_range %}
+        {% ifnotequal page.paginator.num_pages 1 %}
+          <a name="page_number" />
+          {% for p in page.paginator.page_range %}
+              {% if forloop.counter < 10 or forloop.revcounter < 10 %}
+                {% ifequal p page.number  %}
+                  <span class="current">{{p}}</span>
+                {% else %}
+                  <span class="page">
+                    <a href="{% url contents_news_page page=p %}" >{{p}}</a>
+                  </span>
+                {% endifequal %}
+              {% endif %}
+          {% endfor %}
+        {% endifnotequal %}
+      {% endif %}
+
+      {% if page.has_next %}
+          <a name="pange_next"/>
+          <span class="page">
+            <a href="{% url contents_news_page page=page.next_page_number %}">&gt;&gt;</a>
+          </span>
+      {% endif %}
+      <div style="float: right; buttom: 0px">全{{ page.paginator.count }}件</div>
+    </div>
+    {# Pager #}
+
+  {% for instance in page.object_list  %}  
+      <h3 style="width:50%">{{instance.dt_publish|date:"Y/m/d"}} {{instance.title}} </h3>
+        <p>{{ instance.text  }} </p>
+  {% endfor %}  
+
+{% endblock %}

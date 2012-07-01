@@ -16,5 +16,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
     # contents
-    url(r'^(?P<path>.+).html$','app.contents.views.render', name='contents_render',)
+    url(r'^news/page/(?P<page>.+).html$','app.contents.views.news_page', name='contents_news_page',),
+    url(r'^news/(?P<id>.+).html$','app.contents.views.news_item', name='contents_news_item',),
+    url(r'^(?P<path>.+).html$','app.contents.views.render', name='contents_render',),
 )
