@@ -8,6 +8,12 @@ import os
 
 from models import News
 
+NEWSITEMS_IN_PAGE=4
+
+def news_pager(items_in_page = NEWSITEMS_IN_PAGE):
+    return Paginator( News.objects.all() , items_in_page) 
+    
+
 def render(request,path):
     page = os.path.basename( path )
     return render_to_response( '%s.html' % page,
@@ -22,7 +28,7 @@ def news_item(request,id):
                     context_instance=template.RequestContext(request),)
 
 def news_page(request,page):
-    pager = Paginator( News.objects.all() , 4) 
+    pager = news_pager()
 #    p= pager.page( max(1,min(page ,pager.num_pages)) )
     p = pager.page(page)
 #    print ">>>",page,  pager.num_pages, p.previous_page_number(),p.next_page_number()

@@ -17,7 +17,7 @@
       {% if page.has_previous %}
           <a name="page_prev" />
           <span class="page">
-            <a href="{% url contents_news_page page=page.previous_page_number %}" >&lt;&lt;</a>
+            <a href="{{RELATIVE_ROOT}}{% url contents_news_page page=page.previous_page_number %}" >&lt;&lt;</a>
           </span>
       {% endif %}
 
@@ -30,7 +30,7 @@
                   <span class="current">{{p}}</span>
                 {% else %}
                   <span class="page">
-                    <a href="{% url contents_news_page page=p %}" >{{p}}</a>
+                    <a href="{{RELATIVE_ROOT}}{% url contents_news_page page=p %}" >{{p}}</a>
                   </span>
                 {% endifequal %}
               {% endif %}
@@ -41,7 +41,7 @@
       {% if page.has_next %}
           <a name="pange_next"/>
           <span class="page">
-            <a href="{% url contents_news_page page=page.next_page_number %}">&gt;&gt;</a>
+            <a href="{{RELATIVE_ROOT}}{% url contents_news_page page=page.next_page_number %}">&gt;&gt;</a>
           </span>
       {% endif %}
       <div style="float: right; buttom: 0px">全{{ page.paginator.count }}件</div>
@@ -50,7 +50,7 @@
 
   {% for instance in page.object_list  %}  
       <h3 style="width:50%">{{instance.dt_publish|date:"Y/m/d"}} {{instance.title}} </h3>
-        <p>{{ instance.text|truncatewords:1  }}  (<a href="{% url contents_news_item id=instance.id %}">全文</a> )
+        <p>{{ instance.text|truncatewords:1  }}  (<a href="{{RELATIVE_ROOT}}{% url contents_news_item id=instance.id %}">全文</a> )
         </p>
         
   {% endfor %}  

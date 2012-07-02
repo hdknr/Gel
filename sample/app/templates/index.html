@@ -56,7 +56,7 @@ Vegeneの宅配は、日ごろの買物が大変な高齢の方とか妊娠し�
                {% if forloop.counter < 4 %}
                 <h3>{{ item.dt_publish }}</h3>
                 <p>{{ item.text|truncatewords:1  }}
-                (<a href="{% url contents_news_item id=item.id %}">全文</a>)
+                (<a href="{{RELATIVE_ROOT}}{% url contents_news_item id=item.id %}">全文</a>)
                 </p>
                {% endif %}
             {% endfor %}

@@ -7,6 +7,7 @@
 
 '''
 from django.core.management.base import BaseCommand, CommandError
+from django.conf import settings
 from optparse import make_option
 
 import os 
@@ -48,10 +49,10 @@ class Command(BaseCommand):
         shutil.copytree('static',self.STATIC )       #: TODO "static" should be given as option
 
         #: URLS
-        urls = ['/index.html','/contact.html' ,
-                '/a/a/a/a/index.html'
-                ]
-        for u in urls:
+        m = __import__(settings.GEL_MODULE,globals(),locals(), 
+                        settings.GEL_MODULE.split('.')[-1:] ) 
+        
+        for u in m.urls():
             self.save_content( u )
 
 #        print r.content

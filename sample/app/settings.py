@@ -166,6 +166,7 @@ TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
     'app.context.site',   # - this sample application
     'app.contents.models.context',
 )
+GEL_MODULE='app.gel'
 STATIC_RELATIVE=True
 
 # --- mandb ---
