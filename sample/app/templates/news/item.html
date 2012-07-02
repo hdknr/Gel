@@ -8,6 +8,9 @@
 
 		<div class="line"></div>
          <h3>{{ news.dt_publish }}</h3>
+         {% if news.image_main %}
+            <img src="{{RELATIVE_ROOT}}{{MEDIA_URL}}{{news.image_main}}" />
+         {% endif %}
          <p>{{ news.text }}
          </p>
 

@@ -1,4 +1,7 @@
 from django.conf.urls import patterns, include, url
+# for statci()
+from django.conf import settings
+from django.conf.urls.static import static
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -19,4 +22,5 @@ urlpatterns = patterns('',
     url(r'^news/page/(?P<page>.+).html$','app.contents.views.news_page', name='contents_news_page',),
     url(r'^news/(?P<id>.+).html$','app.contents.views.news_item', name='contents_news_item',),
     url(r'^(?P<path>.+).html$','app.contents.views.render', name='contents_render',),
-)
+
+) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
