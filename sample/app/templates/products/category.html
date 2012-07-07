@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block page %}
+		<div class="line"></div>
+        <div>
+          <h1>商品カテゴリ</h1>
+        </div>
+		<div class="line"></div>
+
+  {% for instance in categories %}  
+
+      <h3 style="width:50%">{{instance.name}}</h3>
+        <p>{{ instance.description}}  
+        </p>
+        <p style="text-align:right">
+        <a href="{% url products_product_page page="1" category=instance.slug  %}">{{instance.name}}の商品一覧</a>
+        </p>
+        
+  {% endfor %}  
+
+{% endblock %}

@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-# for statci()
+# for static()
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -17,6 +17,11 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
+
+    # products
+    url(r'^products/(?P<category>.+)/page/(?P<page>.+).html$','app.products.views.product_page', name='products_product_page',),
+    url(r'^products/index.html$','app.products.views.product_category', name='products_product_category',),
+    url(r'^products/(?P<id>.+).html$','app.products.views.product_item', name='products_product_item',),
 
     # contents
     url(r'^news/page/(?P<page>.+).html$','app.contents.views.news_page', name='contents_news_page',),

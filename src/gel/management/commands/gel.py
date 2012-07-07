@@ -67,9 +67,6 @@ class Command(BaseCommand):
         for u in m.urls():
             self.save_content( u )
 
-#        print r.content
-#        print dir(r)
-
     def handle(self, *args, **options):
         command = args[0] if len(args) >0 else 'default'
         getattr(self, 'handle_%s'% command ,Command.handle_default)(self,*args,**options)
